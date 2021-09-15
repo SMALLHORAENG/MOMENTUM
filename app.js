@@ -173,3 +173,152 @@
         console.log(player.points);
         해보면 기존 값 100에 + 10이 된 110이 출력됨을 볼 수 있다.
 */  
+
+
+
+// function sayHello(){
+//     console.log("hello!");
+// }
+// sayHello();
+//
+// function sayHello(nameOfPerson,age){
+//     console.log("Hello my name is " + nameOfPerson + " and i'm " + age);
+// }
+//
+// sayHello("규성",24);
+// sayHello("임규성",24);
+//
+// function plus(firstNumber, secondNumber){
+//     console.log(firstNumber + secondNumber);
+// }
+// function divide(a,b){
+//     console.log(a/b);
+// }
+// firstNumber,secondNumber은 plus 안에만 있고
+// divide안에는 a,b만 있다 함수 밖에서 사용 불가능
+// console.log(a,b); 이런식으로 밖에서 사용시 오류가 뜬다
+//
+// plus(60,8);
+// divide(100,4);
+
+// const player = {
+//     name: "규성",
+//     sayHello: function(otherPersonName){
+//         console.log("hello " + otherPersonName + " nice to meet you")
+//     },
+// };
+
+// console.log(player.name);
+// player.sayHello("임규성");
+/* 2.7-2.8 Functions
+    function
+    규칙
+        function 함수명() {} 중괄호 안에 들어가는 내용은 함수명이 호출될 때 실행됨
+        function sayHello(){
+        console.log("hello!");
+        } 와 같이 함수를 만들 수 있다
+
+    실행
+        ()를 이용해서 출력해온것을 생각하자
+        alert() , console.log() 등등
+        sayHello(); 와 같이 출력
+
+    argument(인수)
+        함수를 실행하는 동안 어떤 정보를 함수에 보낼 수 있는 방법
+        sayHello("hi"); 등으로 실행시 함수에 hi라는 값 또는 데이터를 보낼 수 있음
+
+        받는 방법은 ()안에 넣어주는 것
+        function sayHello(nameOfPerson){
+            console.log(nameOfPerson);
+        } 이 방법으로 값을 받을 수 있음 (sayHello("규성"); )라고 보냈을 시 "규성" 이라는 값이
+        받아지고 console.log를 통해서 출력됨
+        
+    인수를 보내고 받고 출력하는 것
+        받는것 (이름과 나이 값 2개를 받음)
+        function sayHello(nameOfPerson,age){
+            console.log("Hello my name is" + nameOfPerson + "and i'm" + age);
+        }
+
+        보내는 것
+        sayHello("규성",24);
+        sayHello("암규성",24);
+        이름과 나이 (값 2개를 보냄)
+
+        *function 밖에서 nameofPerson, age를 사용할 수 없음*
+        위 코드에서 function 밖에
+        console.log(nameOfPerson,age);를 한다면 사용 불가능하다
+
+    계산기
+        function plus(firstNumber, secondNumber){
+        console.log(firstNumber + secondNumber);
+        }
+        function divide(a,b){
+            console.log(a/b);
+        }
+        // firstNumber,secondNumber은 plus 안에만 있고
+        // divide안에는 a,b만 있다 함수 밖에서 사용 불가능
+
+        plus(60,8);
+        divide(100,4);
+
+    player object 생성    
+        const player = {
+        name: "규성",
+        sayHello: function(otherPersonName){
+        console.log("hello " + otherPersonName + " nice to meet you")
+        },
+        };
+        console.log(player.name);
+        player.sayHello("임규성");
+
+        위와같이 작성시 출력값은
+        규성 -> console.log(player.name);
+        hello 임규성 nice to meet you -> player.sayHello("임규성");
+
+        아래는 sayHello에 function(otherPersonName)에 "임규성" 이라는 값을 넣어줬기 때문에
+        이러한 출력값이 나온 것
+*/
+
+
+
+/* 2.8 복습
+        1. 데이터 타입
+            number,string
+
+        2. variable(변수)
+            const, let
+
+        3. boolean
+            true, false (1,0)
+            null, undefined
+
+        4. array(배열)
+            값 넣기
+            const array name = [1,2,false,true,"text", variableName];
+            출력
+            arrayName[arrayNumber];
+            console.log(arrayName[arrayNumber]);
+            값 업데이트
+            arrayName[arrayNumber] = "변경값"
+            arrayName.push("추가할 값") 
+            push는 (메모리칸이 생기고 값이 추가되는 것 다른 배열안의 값 변경되는건 아님)
+
+        5. object
+            property 를 object안에 만듦
+            출력
+            console.log(object.property);
+
+            업데이트
+            object.property = "수정 값";
+            console.log(object.property="수정 값");
+*/
+
+const player = {
+    name:"규성",
+    age: function(nai){
+        console.log(24);
+    },
+};
+
+player.age();
+console.log(player.name);
