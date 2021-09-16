@@ -1,3 +1,4 @@
+// ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ2.01ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
 // alert("hi")
 /* 2.1
     프로그래밍에 있어서 가장 기본적인 두 가지 데이터 타입(모튼 프로그래밍)
@@ -11,6 +12,8 @@
 
 
 
+
+// ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ2.02ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
 // console.log("test");
 
 // const a=5;
@@ -46,6 +49,9 @@
 */
 
 
+
+
+// ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ2.03ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
 // const a = 5;
 // let myName = "규성";
 
@@ -72,6 +78,8 @@
 
 
 
+
+// ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ2.04ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
 // const loding = true;
 // console.log(loding); //boolean
 
@@ -91,6 +99,8 @@
 
 
 
+
+// ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ2.05ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
 // const mon="mon";
 // const tue="tue";
 // const wed="wed";
@@ -131,6 +141,8 @@
 
 
 
+
+// ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ2.06ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
 // const player = {
 //     name:"규성",
 //     points:100,
@@ -176,6 +188,8 @@
 
 
 
+
+// ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ2.07~08ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
 // function sayHello(){
 //     console.log("hello!");
 // }
@@ -281,6 +295,8 @@
 
 
 
+
+// ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ2.08ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
 /* 2.8 복습
         1. 데이터 타입
             number,string
@@ -311,14 +327,161 @@
             업데이트
             object.property = "수정 값";
             console.log(object.property="수정 값");
+            
+        6. function
+            선언
+            function 함수명(a,b){ - 함수안에 데이터를 받는 메모리 위치를 나타냄(자리표시자)
+             실행할 내용;
+             예를들어 console.log(a+b);
+            }
+            
+            데이터 업데이트(추가,넣기) 및 출력
+            함수명(a 넣을 값, b 넣을 값);
+            * 순서대로 값이 들어감 *
+            - 데이터를 넣어주고 함수안에 console.log(a+b) 라고 되있으면 a값과 b값이 더해져서 출력됨 -
+*/
+// const player = {
+//     name:"규성",
+//     age: function(nai){
+//         console.log(nai);
+//     },
+//     ageTwo: function(){
+//         console.log(24);
+//     }
+// };
+
+// player.age(23);
+// player.ageTwo();
+// console.log(player.name);
+// 데이터 방식 확인을 위한 연습
+
+//숙제 calculator add min mul squ
+// const calculator = {
+//     add: function(a,b){
+//         console.log(a+b);
+//     },
+//     min: function(a,b){
+//         console.log(a-b);
+//     },
+//     mul: function(a,b){
+//         console.log(a*b);
+//     },
+//     squ: function(a,b){
+//         console.log(a**b);
+//     },    
+// }
+
+// calculator.add(10,5);
+// calculator.min(10,5);
+// calculator.mul(10,5);
+// calculator.squ(10,5);
+
+//두번째 방법
+// function caculator(a,b){
+//     console.log(a+b);
+//     console.log(a-b);
+//     console.log(a*b);
+//     console.log(a**b);
+// }
+// caculator(10,5);
+
+
+
+
+// ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ2.11ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+// const age = 24;
+// function calculatorKrAge(ageOfforeigner){ //2. age의 값인 24가 ageOfforeigner에 업데이트 됨
+//     return ageOfforeigner + 2; //3. ageOfforeigner의 값 24에 + 2 해서 26이 return 됨
+// }
+
+// const KrAge = calculatorKrAge(age); //1. age값을 function의 ageOfforeigner에 넣어줌
+// console.log(KrAge); //4. return된 26의 값이 KrAge 안에 들어가서 출력됨 (최종)
+//
+// const calulator = {
+//     add: function(a,b){
+//     return a + b;
+//     },
+// }
+// const plus = calulator.add(2,3);
+// console.log(plus);
+// 위 object 안에 function / 아래 function 만
+// function calculator(a,b) {
+//     return a + b;
+// }
+// const plus = calculator(2,3);
+// console.log(plus);
+
+// const Calculator = {
+//     plus: function (a,b){
+//         return a+b; 
+//     },
+//     minus: function (a,b){
+//         return a-b; 
+//     },
+//     times: function (a,b){
+//         return a*b; 
+//     },
+//     divide: function (a,b){
+//         return a/b; 
+//     },
+//     power: function (a,b){
+//         return a**b; 
+//     },
+// };
+// const plusResult = Calculator.plus(2,3);
+// const minusResult = Calculator.minus(plusResult,10);
+// const timesResult = Calculator.times(10,minusResult);
+// const divideResult = Calculator.divide(timesResult,plusResult);
+// const powerResult = Calculator.power(divideResult,minusResult);
+/* 2.11 Returns
+    console.log가 아닌 다른 방법으로 코드안에서 결과를 얻기 (콘솔에 표시되는 것 아닌 다른방법)
+        console.log는 console에 무언가를 log 하는 것(기록하여 보여줌)
+    
+    return
+        *좌측은 코드 우측은 그 안에 들어간 값을 이해하기 위해 숫자로 적은 것*
+        먼저 const KrAge = calculatorKrAge(age); 이 작동됨 (function은 호출해야 실행되므로)
+        KrAge = calculatorKrAge(age); 에서 age안에 KrAge = calculatorKrAge(24); 로 됨
+        calculatorKrAge(ageOfforeigner) 에서 calculatorKrAge(24){ 로 됨
+        그러면 return은 +2 해서 ageOfforeigner + 2 = 26이므로 26이 return 됨
+        그럼 console.log(KrAge); 안에 26이 들어가서 26이 출력됨
+
+        이제 console 출력하려고 function 쓰지 않을 것
+        작업을 처리하고 그 결과를 return 하기 위해 function을 사용 할 것
+            *function 이 밖의 코드와 연결(소통) 되기 위함*
+
+        return 하면 계산 담당하는 function은 return하는 값과 같아질 것
+        (ageOfforeigner + 2 한 값이 KrAge = calulatorKrAge(age)에 들어가는 것)
+        
+        위 코드에 return "hello"; 라고 하면 출력값은 hello가 된다
+        
+    코드의 긴 연결
+        const Calculator = {
+        plus: function (a,b){
+            return a+b; 
+        },
+        minus: function (a,b){
+            return a-b; 
+        },
+        times: function (a,b){
+            return a*b; 
+        },
+        divide: function (a,b){
+            return a/b; 
+        },
+        power: function (a,b){
+            return a**b; 
+        },
+    };
+        const plusResult = Calculator.plus(2,3);
+        const minusResult = Calculator.minus(plusResult,10);
+        const timesResult = Calculator.times(10,minusResult);
+        const divideResult = Calculator.divide(timesResult,plusResult);
+        const powerResult = Calculator.power(divideResult,minusResult);
+
+        위 코드처럼 입력시 console.log를 해주지 않았기에 console에 표시되지는 않음
+        하지만 plusResult 입력시 결과값이 출력됨
 */
 
-const player = {
-    name:"규성",
-    age: function(nai){
-        console.log(24);
-    },
-};
 
-player.age();
-console.log(player.name);
+
+
