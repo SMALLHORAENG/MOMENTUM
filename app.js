@@ -496,5 +496,58 @@
 
 
 
-// ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ2.13ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+// ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ2.13 - 2.14 - 2.15 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+//2.13//
+// const age = parseInt(prompt("How old are you?")); //입력값 숫자 아니면 NaN 출력
+// console.log(age); 
 
+// console.log(typeof age, typeof parseInt(age)); //타입 출력 (string, number 확인)
+
+
+//2.14//
+// const age = parseInt(prompt("how old are you?"));
+
+// console.log(isNaN(age));
+
+// if(isNaN(age)){
+//     console.log("plsase write a number");
+// } else {
+//     console.log("Thank you for writing your age.");
+// }
+
+
+//2.15//
+
+
+/* 2.13 conditionals 조건문 ~ 2.14 part two ~ 2.15 part three
+        복습 겸 팁
+        prompt 안씀 이유는 message가 별로 안이쁘고, css 적용 불가하기 때문
+        typeof variable 하면 그 값의 타입을 알 수 있다
+        기본 타입은 string 이다
+
+        type 변경
+        string - > number
+            parseInt()      
+            const age = prompt("How old are you?");
+            console.log(typeof age, typeof parseInt(age));
+        위 코드와 같이 작성시 입력하는 값이 좌측은 string로 나오고 우측은 number로 나온다
+        만일 number값이 아닌 값을 입력시 NaN (Not a Number) 라고 나온다 (이걸 조건으로 사용)
+
+
+    if, else
+        isNaN() 이용시 boolean (참 , 거짓) 으로 출력해줌
+        괄호안의 인자값이 만일 숫자일경우 false가 출력됨 (NaN이 아니기 때문)
+
+        if(condition(조건){
+            조건이 true 일 경우 실행할 코드
+        } else {
+            조건이 false일 경우 실행할 코드
+        }
+        조건은 boolean 으로 판별이 가능해야함
+        
+        parseInt를 이용해서 값을 string에서 number로 만들어주는데
+        여기에 텍스트가 들어가면 number로 만들 수 없고 NaN으로 표시해줌
+
+
+    
+*/
