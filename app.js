@@ -517,8 +517,19 @@
 
 
 //2.15//
+// const age = parseInt(prompt("how old are you?"));
 
-
+// if(isNaN(age) || age < 0){
+//     console.log("plsase write a real positive number");
+// } else if(age < 18){
+//     console.log("You are too young.");
+// } else if(age >= 18 && age <= 50){
+//     console.log("You can drink");
+// } else if(age > 50 && age <= 80){
+//     console.log("You shoud exercise");
+// } else if(age > 80){
+//     console.log("You can do whatever you want");
+// }
 /* 2.13 conditionals 조건문 ~ 2.14 part two ~ 2.15 part three
         복습 겸 팁
         prompt 안씀 이유는 message가 별로 안이쁘고, css 적용 불가하기 때문
@@ -548,6 +559,26 @@
         parseInt를 이용해서 값을 string에서 number로 만들어주는데
         여기에 텍스트가 들어가면 number로 만들 수 없고 NaN으로 표시해줌
 
+    else if
+        else if 는 if와 else 사이에 조건문을 넣을 수 있고
+        else는 마지막에 넣어주는데 if와 else if의 조건이 모두 false가 되야 else가 작동된다
 
+        AND 연산자 (두 값이 모두 '참' 이여야 조건에 충족해 '참'이 출력된다)
+        조건 두개를 연결해주는 방법중 AND가 있는데 이는 &&를 두개의 조건 사이에 넣어주면 된다.
+        OR 연산자 (두 값중 하나가 '참' 이여야 조건에 충족해 '참'이 출력된다)
+        조건 두개를 연결해주는 방법중 OR이 있는데 이는 ||을 두개의 조건 사이에 넣어주면 된다.
+    
+        else는 선택사항 없어도 된다.
+
+        and = true true = true 나머지는 false
+        or = true true / true false / false true = true // false false = false
+*/
+
+
+
+// ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ2.16ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+/* 2/16
+        * == 는 값이 같은지를 보고 ===는 js에서 사용하고 값 과 데이터타입도 같은지 본다*
     
 */
