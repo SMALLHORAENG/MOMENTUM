@@ -577,7 +577,6 @@
 
 
 // ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ2.16ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
-
 /* 2/16 복습 + 2가지 연산자
     연산자(operator)
         1. === (값, 데이터타입 모두 같은경우)
@@ -605,4 +604,91 @@
 
     js
         클릭 이벤트 키보드 마우스 감지 등등 사용자와 상호작용 및 HTML 수정 되야함
+*/
+
+
+
+// ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ3.0ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+// document.title = "Hello Js!";
+/* 3.0
+    document.title / document.body 등
+        웹 console에 document를 입력시 html 코드를 보여줌
+        웹 console에 console.dir(document) 입력시 html 코드의 정보를 보여줌
+        document.title 하면 title의 정보를 보여줌 
+        (javascript 에서는 html을 자동으로 읽어와줌을 의미함)
+
+        document.title = "title 원하는 변경 값" 하면 title이 바뀜
+        하지만 console에서 해서는 새로고침 하면 다시 원상태로 돌아옴
+        (여기선 js에서 html의 값을 변경할 수 있다는 걸 알게해줌)
+
+        JS에서 HTML의 값을 변경하면 그 변경된 값이 적용된다 (console에서 사용한 것 처럼 써보면 알수있음)
+        document.title = "변경 값"
+
+        document.body 와 같이해도 body의 정보를 볼 수 있다
+        document.location 해주면 현재 파일 위치를 알려준다
+*/
+
+
+
+// ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ3.0ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+// const titles = document.getElementBysId("title");
+
+// title.innerText ="Got you!";
+
+// console.dir(titles);
+
+// console.log(titles.id);
+// console.log(titles.className);
+/* 3.1
+    document를 get
+        document.getElementBysId("title") 라고 입력시 title이라는 id를 가진 코드를 불러와줌
+        getElementBysId() 에서 괄호 안에는 string 값이 들어가야함 고로 "" 안에 내용을 적어줘야 함
+
+    js에서 값 가져오기
+        const titles = document.getElementBysId("title");
+        해준 뒤 console.log 가 아닌 console.dir을 해주면 element를 더욱 자세하게 보여줌
+        title이라는 id는 h1태그로 되있는데 h1태그 하나에 많은 정보를 가져올 수 있음을 볼 수 있다.
+    
+    js에서 값 변경하기
+        titles.innerText = "변경 값"
+        값을 가져왔기 때문에 변경이 가능한 것 (getElementsById를 통해 titles안에 값을 넣어줬기 때문)
+        위 코드를 입력시 innerText가 변경된다.
+        (HTML에서 변경한 것 아닌 js에서 변경한 것)
+
+    js에서 값 확인하기(가져오기와 비슷함)
+        console.log(titles.id);
+        console.log(titles.className);
+        위 코드는 title 이라는 id를 getElementsById로 가져왔기 때문에 사용 가능하고
+        id title인 것의 id를 확인하는것과 className를 확인하는 것    
+*/
+
+
+
+// ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ3.2ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+// const title = document.getElementsByTagName("h1");
+
+const title = document.querySelector(".hello h1");
+
+console.log(title);
+
+/* 3.2
+    class 속 Element를 가져오는 방법
+        간단한 방법
+        const title = document.getElementsByTagName("태그 명")
+        태그명은 h1, img, a 등등
+        
+        가장 좋은 방법 (거의 모든 방식에서 사용하는 방식)
+        .getElemnetsByTagName이 아닌 querySelector , querySelectorAll 을 사용하는 것
+        querySelector는 element를 css 방식으로 검색가능
+        const title = document.querySelector(".hello h1"); 하면 hello 클래스 속 h1를 가져오는 것
+        .hello를 div로 바꿔도 같은 값 출력됨
+        
+        querySelector 조건에 맞으면 그 값의 첫번째만 출력해줌
+        에를들어 hello 클래스를 가진 div 안에 h1을 찾는데 여러 div가 있으면
+        첫번째 div의 h1태그 내용만 출력됨
+
+        모두 출력하고 싶다면 querySelectorAll 해주면 됨
+
+        querySelector 를 이용해서 #id값을 해주면 id도 가져올 수 있고
+        .hello h1:first:child 등을 이용할 수 있다.
 */
