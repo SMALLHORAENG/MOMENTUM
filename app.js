@@ -733,3 +733,88 @@
 */
 
 
+
+// ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ3.4ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+// const title = document.querySelector("div.hello:first-child h1");
+
+// function handleTitleClick(){
+//     console.log("title was clicked");
+//     title.style.color = "blue";
+// }
+
+// function handleMouseEnter(){
+//     title.innerText = "Mouse is here";
+// }
+
+// function handleMouseLeave(){
+//     title.innerText = "Mouse is gone"
+// }
+
+// title.addEventListener("click", handleTitleClick);
+// title.addEventListener("mouseenter", handleMouseEnter);
+// title.addEventListener("mouseleave", handleMouseLeave);
+/* 3.4 Event 2
+    구글링 Event 찾기
+        h1 html element mdn 검색 후 Web APIs 라는 문장이 포함된 페이지를 찾아야 함
+        (web apis 는 js관점의 html heading element란 의미이기 때문)
+
+        https://developer.mozilla.org/en-US/docs/Web/API/HTMLHeadingElement
+        안에서 event 를 찾아본다거나
+
+        console.dir(title); 하면 title 안에서 on으로 시작하는 event를 볼수있다
+        on으로 시작하는 event들을 사용할 때 에는 on을 제외하고 사용한다
+        onclick -> click 
+
+        mouseenter 은 마우스를 올리면 일어나는 이벤트이다.
+        mouseleave 는 마우스를 내리면 일어나는 이벤트이다.
+*/
+
+
+
+// ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ3.5ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+// const title = document.querySelectorAll("title");
+
+// function handleWindowResize(){
+//     document.body.style.backgroundColor = "tomato";
+// }
+
+// function handleWindowCopy(){
+//     alert("copier");
+// }
+
+// function handleWindowOffline(){
+//     alert("SOS no WIFI");
+// }
+
+// function handleWindowOnline(){
+//     alert("ALL GOOD");
+// }
+
+// /* console.log(title); */
+
+// window.addEventListener("resize", handleWindowResize);
+// window.addEventListener("copy", handleWindowCopy);
+// window.addEventListener("offline", handleWindowOffline);
+// window.addEventListener("online", handleWindowOnline);
+/* 3.5 More Events
+    Window
+        window는 기본적으로 사용 가능하다 (os의 윈도우가 아닌 창을 의미함)
+
+        resize는 화면크기가 바뀔 때 적용되는걸 의미하고
+        document.body.style.backgroundColor로 한 이유는 
+        body 가 중요함 / 그냥 title을 해주면 body의 title와 document의 title인지 구분이 안됨
+        body를 넣어주지 않으면 document의 title에 적용됨
+
+        copy 복사 하는걸 인식
+        offline 인터넷이 끊어진걸 인식
+        online 인터넷이 켜진걸 인식
+*/
+
+
+
+// ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ3.6ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+
+/*
+
+*/
