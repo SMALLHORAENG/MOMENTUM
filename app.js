@@ -667,9 +667,9 @@
 // ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ3.2ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
 // const title = document.getElementsByTagName("h1");
 
-const title = document.querySelector(".hello h1");
+// const title = document.querySelector(".hello h1");
 
-console.log(title);
+// console.log(title);
 
 /* 3.2
     class 속 Element를 가져오는 방법
@@ -690,5 +690,46 @@ console.log(title);
         모두 출력하고 싶다면 querySelectorAll 해주면 됨
 
         querySelector 를 이용해서 #id값을 해주면 id도 가져올 수 있고
-        .hello h1:first:child 등을 이용할 수 있다.
+        div .hello:first:child h1  등을 이용할 수 있다.
 */
+
+
+
+// ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ3.3ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+// const title = document.querySelector("div.hello:first-child h1");
+
+// title.style.color = "blue";
+
+// function handleTitleClick(){
+//     console.log("title was clicked");
+//     title.style.color = "blue";
+// }
+
+// title.addEventListener("click", handleTitleClick);
+/* 3.3 Event
+        console.log가 아니라 console.dir을 해주면 내부 정보를 보여준다
+
+        on으로 시작하는 것은 event 이다
+        object 안에 style이 있는데 그 안에 color을 바꿀 수 있다
+        title.style.color = "변경할 색"; 이런식으로
+
+    click event 
+        event를 listen 해주는 방법
+        title.addEventListener("click");
+        addEventListener 는 무슨 event를 listen 하고 싶은지 알려주는 방법 "click" 해주면
+        click 이벤트를 알고싶다는 것 의미함
+
+        function handleTitleClick(){
+        console.log("title was clicked");
+        title.style.color = "blue";
+        }
+        title.addEventListener("click", handleTitleClick);
+
+        function을 만들어줘서 실행시키게 해줘야 함
+        addEvnetListener을 통해서 이벤트를 읽게 해주는데 여기서는 "click" 로
+        클릭시 만들어둔 function이 실행되게 해줌
+
+        이벤트의 종류는 다음에 더 알아볼 예정
+*/
+
+
