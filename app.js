@@ -777,19 +777,15 @@
 // function handleWindowResize(){
 //     document.body.style.backgroundColor = "tomato";
 // }
-
 // function handleWindowCopy(){
 //     alert("copier");
 // }
-
 // function handleWindowOffline(){
 //     alert("SOS no WIFI");
 // }
-
 // function handleWindowOnline(){
 //     alert("ALL GOOD");
 // }
-
 // /* console.log(title); */
 
 // window.addEventListener("resize", handleWindowResize);
@@ -813,8 +809,113 @@
 
 
 // ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ3.6ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+// const title = document.querySelector("div.hello:first-child h1");
+
+// /* function handleTitleClick(){ //기본버전
+//     if(title.style.color === "blue"){
+//         title.style.color = "tomato";
+//     } else {
+//         title.style.color = "blue";
+//     }
+// } */
+
+// function handleTitleClick(){ //수정버전
+//     const currentColor = title.style.color;
+//     let newColor;
+
+//     if(currentColor === "blue"){
+//         newColor = "tomato";
+//     } else {
+//         newColor = "blue";
+//     }
+//     title.style.color = newColor;
+// }
+
+// title.addEventListener("click",handleTitleClick);
+/* 3.6 
+    CSS in JS one
+        현재의 컬러(상태)를 받는 법 const 함수명 = 함수.style.color;
+
+        수정 버전의 코드가 더 깔끔하고 이해하기 좋다
+        let를 통해서 변할 수 있는 newColor이라는 공간을 만들어두고
+        조건에 맞춰서 그 값을 넣어주고 마지막에 바꿔주는 것
+
+        CSS는 css파일에서 수정해주는것이 더 좋다 (코드가 복잡해지기 때문)
+
+    1. Element 찾기
+    2. Event Listen 하기
+    3. 그 Event에 반응하기 (보여주기 감추기 색바꾸기 등등)
+*/
 
 
-/*
 
+// ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ3.7 - 3.8ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+// const title = document.querySelector("div.hello:first-child h1");
+
+// function handleTitleClick(){ //className 방식
+//     const clickedClass = "clicked"
+//     if(title.className === clickedClass){
+//         title.className = "";
+//     }else {
+//         title.className = clickedClass;
+//     }
+// }
+
+// function handleTitleClick(){ //classList 방식
+//     const clickedClass = "clicked"
+//     if(title.classList.contains(clickedClass)){
+//         title.classList.remove(clickedClass);
+//     }else {
+//         title.classList.add(clickedClass);
+//     }
+// }
+
+// function handleTitleClick(){ //toggle 방식
+//     title.classList.toggle("clicked");
+// }
+
+// title.addEventListener("click",handleTitleClick);
+/* 3.7, 3.8
+    CSS in JS two
+        css는 css에서 설정해주는것이 좋다.
+        위 코드는 className를 통해서 css코드를 가져오지 않고 클래스를 가져와서
+        적용시킨 방법이다
+
+    코드를 깔끔하게 하는 방법 1.
+        값을 변수에 저장해준다 그러면 에러가 나도 변수명에서 나서 알기쉽다
+        *모든 클래스이름을 변경해주면 기존의 클래스네임이 사라져서 문제가 생길 수 있다 해결법은 아래*
+    -> className을 classList로 해주면 된다
+    contains는 지정한 클래스 값이 엘리먼트의 class 속성에 존재하는지 확인한다.
+    remove는 지정한 클래스 제거
+    add는 지정한 클래스 추가 를 의미한다.
+
+    toggle (위 classList 방식을 위한 function)
+        classList에 class name이 이미 있는지 확인해서, 있으면 제거 없으면 추가해줌
+        *하나만 사용하면 const를 통해서 클래스이름을 담은 변수를 만들 필요가 없다.*
+*/
+
+
+
+
+const loginInput = document.querySelector(".login-form input");
+const loginButton = document.querySelector(".login-form button");
+
+function loginBtnClick(){
+    console.log("Button Click!");
+    console.log(loginInput.value);
+}
+
+loginButton.addEventListener("click", loginBtnClick);
+
+
+
+
+
+
+/* 4.0
+    본격적인 개발
+        loginInput,Button을 통해서 값을 받아서 function에 Input의value(내용)이 출력되게 한다
+        이벤트를 통해 click가 되면 만들어둔 function이 실행되게 한다 (value 값을 받는 것)
+
+        다음 강의에서 버튼을 누를 때 조건을 넣는걸 해볼예정(닉네임이 아니면 안눌린다거나 등등)
 */
