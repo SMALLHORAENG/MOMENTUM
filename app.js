@@ -897,25 +897,77 @@
 
 
 
+// const loginInput = document.querySelector(".login-form:first-child");
+const loginForm = document.querySelector(".login-form");
 const loginInput = document.querySelector(".login-form input");
-const loginButton = document.querySelector(".login-form button");
 
-function loginBtnClick(){
-    console.log("Button Click!");
+//const link = document.querySelector("a");
+
+function onLoginSubmit(event){
+    // const username = loginInput.username;
+    event.preventDefault();
     console.log(loginInput.value);
+    console.dir(loginForm);
 }
+// loginButton.addEventListener("click", loginBtnClick);
 
-loginButton.addEventListener("click", loginBtnClick);
+// function linkClick(event){ //preventDefault 확인을 위한 링크예제
+//     event.preventDefault();
+//     console.log(event);
+//     //alert("NO");
+// }
+
+loginForm.addEventListener("submit",onLoginSubmit);
+//link.addEventListener("click", linkClick);
 
 
 
 
 
-
-/* 4.0
-    본격적인 개발
+/*  4.0
         loginInput,Button을 통해서 값을 받아서 function에 Input의value(내용)이 출력되게 한다
         이벤트를 통해 click가 되면 만들어둔 function이 실행되게 한다 (value 값을 받는 것)
 
         다음 강의에서 버튼을 누를 때 조건을 넣는걸 해볼예정(닉네임이 아니면 안눌린다거나 등등)
+
+    4.1
+        string.length 해주면 문장 길이를 알려준다.
+
+        input 태그에 required 해주면 필수가 되서 입력을 안하면 안된다.
+        (비어있을시 텍스트를 입력해달라고 알림 뜸)
+        *input는 form안에 있어야 유효성검사 작동 됨*
+        form 안에 input이 더 없을때 엔터치거나 버튼 누르면 submit 된다
+        이렇게 되면 브라우저가 새로고침 되서 내용이 사라짐
+        
+        정보를 저장하는 방법 (form이 submit 되는 걸 막아주는 것)
+
+    4.2 - 4.3
+        preventDefault 는 이벤트를 막아주는것
+        function onLoginSubmit(tomato){ //함수 실행시 tomato에 이벤트 줌
+        tomato.preventDefault(); //tomato 에 발생한 이벤트 중지 (기본동작 막아줌)
+        console.log(tomato); //tomato 에 발생된 이벤트 정보 보여줌
+        } 
+        loginForm.addEventListener("submit",onLoginSubmit); //이벤트 실행 (함수에 정보를 담은채로 호출됨)
+
+        tomato 부분은 addEventListener 부분의 함수에서 호출될 때 정보를 가져오기 위함
+        즉 onLoginSubmit(tomato); 이렇게 실행을 시켜준다는 소리임
+        tomato 안에 이벤트의 정보가 들어가는 것
+        tomato.preventDefault();를 해주면 tomato 이벤트에 대한 동작을 멈추는 것
+        onLoginSubmit(tomato); 이렇게 되있으니 이 함수의 동작을 멈춰주는것이 된다.
+        (여기서 tomato 부분인 argument는 이벤트정보를 담기 때문에 이름은 자유롭게 해도 됨)
+
+        tomato 부분을 event로 작성해주는것이 관행
+
+        alert를 넣어주면 alert가 실행될 때 기본동작이 멈춘다(링크 클릭시 나오는 효과에 넣으면 페이지 이동 안되고 멈춤)
+        단 확인버튼을 누르면 다시 실행되서 페이지가 이동된다.
+
+        alert는 알림뜰때 기본동작 멈추지만 확인 누르면 다시 실행되지만 preventDefault를 사용하면 기본동작이 계속 멈추게 됨
+        (링크에 넣어준다던지 해서 확인)
+        *addEventListener 부분의 함수는 사용자가 실행하는것이 아니라 브라우저가 해줌, 그리고 이벤트에 대한 정보도 담아줌*
+
+
+
+        queryselector에서 form의 input가 first-child 또는 nthchild(2) 같은 것 안되는 이유
+
+
 */
