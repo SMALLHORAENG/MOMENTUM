@@ -899,15 +899,25 @@
 
 // const loginInput = document.querySelector(".login-form:first-child");
 const loginForm = document.querySelector(".login-form");
-const loginInput = document.querySelector(".login-form input");
+const loginInput = document.querySelector(".login-form :first-child");
+//querySelector 할 때에 클래스랑 :first-child 또는 :nth-child(1)을 사용할 때 사이에 띄어쓰기를 넣어줘야 된다.
+const greeting = document.querySelector("#greeting");
 
+const HIDDEN_CLASS = "hidden";
+const USERNAME_KEY = "username";
 //const link = document.querySelector("a");
 
 function onLoginSubmit(event){
     // const username = loginInput.username;
     event.preventDefault();
-    console.log(loginInput.value);
-    console.dir(loginForm);
+    // console.log(loginInput.value);
+    // console.dir(loginForm);
+    loginForm.classList.add("HIDDEN_CLASS");
+    const username = loginInput.value;
+    localStorage.setItem(USERNAME_KEY, username);
+    // console.log(username);
+    // greeting.innerText ="안녕! " + username; 아래 코드와 동일한 방법
+    paintGreeting(username);
 }
 // loginButton.addEventListener("click", loginBtnClick);
 
@@ -917,9 +927,23 @@ function onLoginSubmit(event){
 //     //alert("NO");
 // }
 
-loginForm.addEventListener("submit",onLoginSubmit);
 //link.addEventListener("click", linkClick);
+const savedUsername = localStorage.getItem(USERNAME_KEY);
 
+function paintGreeting(username){
+    greeting.innerText =`안녕 ${username}`;
+    greeting.classList.remove("HIDDEN_CLASS");
+} 
+
+if(USERNAME_KEY === null){
+    //show the form
+    loginForm.classList.remove("HIDDEN_CLASS");
+    loginForm.addEventListener("submit",onLoginSubmit);
+}else {
+    //show the greeting
+    paintGreeting(savedUsername);
+
+}
 
 
 
@@ -965,9 +989,42 @@ loginForm.addEventListener("submit",onLoginSubmit);
         (링크에 넣어준다던지 해서 확인)
         *addEventListener 부분의 함수는 사용자가 실행하는것이 아니라 브라우저가 해줌, 그리고 이벤트에 대한 정보도 담아줌*
 
+        queryselector - 구체적인 Element 선택 / getElementById 가 더 빠르고 잘 지원됨
+        queryselector 은 선택한 것의 첫번째 Element를 선택한다
+
+    4.4
+        form 사라지고 유저에게 인사하기
+        form에 hidden 클래스를 추가해준다(hidden은 css에서 display:none 해준 클래스임)    
+        그리고 나오게 하고싶은 텍스트에 id를 주고 그걸 js에서 불러와준다
+        js에서 string 값을 합쳐준 뒤 불러온 id에서 클래스를 지우면 된다 그러면 불러온 id값이 들어간 부분에
+        hidden만 사라지게 되므로 화면에 나타나게 된다. (위 코드 참고)
+
+        String 합치기
+        greeting.innerText ="안녕! " + username; 
+        greeting.innerText =`안녕 ${username}`;
+        두 코드 모두 동일한 방법이지만 아래 코드가 더 새로운 기능
+        *따옴표가 아닌 `백틱`으로 해줘야 한다 그리고 ${} 해서 중괄호 안에는 js의 string변수를 넣어주면 합쳐진다*
+
+    4.5 - 4.6
+        value 저장 
+            localstorage
+        localstorage는 api이고 추가적인 method 를 사용해준다
+        setItem을 사용해주면 저장할 수 있다.
+        localStorage.setItem("key","value")해주면 key 부분 값(부를 명칭?이랑 비슷한 느낌) ,value(부르면 나오는 값 느낌) - 저장
+        localStorage.getItem("key")해주면 value가 출력됨 - 불러오기
+        지울때는 removeItem("value") 해주면 됨
+
+        localStorage.setItem("username", username); 해주면 username이라는 key(아이템 명) 과 username(유저이름을 갖는 변수) 저장됨
+        form에 입력하고 클릭시 저장되서 새로고침 해도 storage에 남는데 form은 새로고침하면 다시 생김
+        
+        유저정보 체크 및 적용
+            localStorage 부분에 유저 정보가 없으면 form이 나오고 있으면 안나오게 하는 방법
 
 
-        queryselector에서 form의 input가 first-child 또는 nthchild(2) 같은 것 안되는 이유
+        *string을 여러번 반복해서 사용하는 경우 오류가 날 수 있으므로 변수로 고정시켜주는것이 좋음*
 
+    
+        
 
+        
 */
