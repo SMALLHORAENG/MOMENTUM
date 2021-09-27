@@ -912,12 +912,13 @@ function onLoginSubmit(event){
     event.preventDefault();
     // console.log(loginInput.value);
     // console.dir(loginForm);
-    loginForm.classList.add("HIDDEN_CLASS");
+    loginForm.classList.add(HIDDEN_CLASS);
     const username = loginInput.value;
     localStorage.setItem(USERNAME_KEY, username);
     // console.log(username);
     // greeting.innerText ="안녕! " + username; 아래 코드와 동일한 방법
     paintGreeting(username);
+    //여기서는 username이라는 인자를 함수에 보냄
 }
 // loginButton.addEventListener("click", loginBtnClick);
 
@@ -928,23 +929,23 @@ function onLoginSubmit(event){
 // }
 
 //link.addEventListener("click", linkClick);
+function paintGreeting(username){
+    greeting.innerText =`반가워요 ${username} 님`;
+    greeting.classList.remove(HIDDEN_CLASS);
+} //여기서 username은 argument에서 가져올 것 (username은 매개변수로 username안에 호출할 때 주는 값을 받는 것)
+
 const savedUsername = localStorage.getItem(USERNAME_KEY);
 
-function paintGreeting(username){
-    greeting.innerText =`안녕 ${username}`;
-    greeting.classList.remove("HIDDEN_CLASS");
-} 
-
-if(USERNAME_KEY === null){
+if(savedUsername === null){
     //show the form
-    loginForm.classList.remove("HIDDEN_CLASS");
+    loginForm.classList.remove(HIDDEN_CLASS);
     loginForm.addEventListener("submit",onLoginSubmit);
 }else {
     //show the greeting
     paintGreeting(savedUsername);
+    //savedUsername 라는 인자를 전달
 
 }
-
 
 
 
@@ -1005,7 +1006,7 @@ if(USERNAME_KEY === null){
         두 코드 모두 동일한 방법이지만 아래 코드가 더 새로운 기능
         *따옴표가 아닌 `백틱`으로 해줘야 한다 그리고 ${} 해서 중괄호 안에는 js의 string변수를 넣어주면 합쳐진다*
 
-    4.5 - 4.6
+    4.5 - 4.6 - 4.7
         value 저장 
             localstorage
         localstorage는 api이고 추가적인 method 를 사용해준다
@@ -1019,12 +1020,11 @@ if(USERNAME_KEY === null){
         
         유저정보 체크 및 적용
             localStorage 부분에 유저 정보가 없으면 form이 나오고 있으면 안나오게 하는 방법
-
+        getItem("Key이름") 해주면 안에 들어있는 객체명을 가져올 수 있음 / 없다면 null 값이 나옴
+        이걸 이용해서 조건문을 만들어 줌
+        getItem("Key이름") === null 이면 form 보여주고 else 아니면 greeting 보여주게 조건문 만들기
 
         *string을 여러번 반복해서 사용하는 경우 오류가 날 수 있으므로 변수로 고정시켜주는것이 좋음*
-
-    
-        
-
-        
+        *매개변수는 함수 만들 때 괄호안에 들어가고 매개변수를 통해서 값을 받는 것
+        인자는 함수 호출할 때 넘겨주는 값을 뜻하고 그 값을 넘겨줘서 매개변수에 들어가서 함수안에 사용되서 실행됨*   
 */
