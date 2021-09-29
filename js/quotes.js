@@ -53,7 +53,7 @@ function delay(){
 }
 
 delay();
-setInterval(delay,86400000);
+setInterval(delay,900000);
 
 /*6.0 Quotes
  사용할 명언과 이름
