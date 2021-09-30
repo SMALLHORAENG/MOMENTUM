@@ -9,27 +9,30 @@
 </head>
 <body>
 
-    <form id = "todo-form">
-        <input type="text" placeholder="Write a To Do and press Enter" required>
-    </form>
-    <!-- <div class="hello">
-        <h1 class="font">Grab me!</h1>
-    </div> -->
-
     <form class="login-form hidden"> <!-- 클래스를 여러개 넣는 방법 잊지말자!-->
         <input type="text" required maxlength="15" placeholder="what your name?"></input>
         <input type="submit" value="Login">
         </input>
     </form>
-    
+
+    <!-- <div class="hello">
+        <h1 class="font">Grab me!</h1>
+    </div> -->
+
     <h1 id="greeting" class="hidden"></h1>
     <h2 id="clock">00:00:00</h2>
     <!-- <a href="https://www.google.com">Google</a> -->
+
+    <form id="todo-form">
+        <input type="text" placeholder="오늘의 목표 입력후 엔터!" required>
+    </form>
+    <ul id="todo-list"></ul>
 
     <div id="quote">
         <span></span>
         <br>
         <span></span>
+        <br>
     </div>
 
     <script src="js/greetings.js"></script>
@@ -69,8 +72,21 @@
 -->
 
 <!--
-    Class = 
+    js
+    greetings.js = 사용자 이름 localStorage 저장해서 출력
+    clock.js = 시간출력
+    quotes.js = 명언 10개를 15분 단위로 랜덤출력
+    background.js = 배경 이미지를 랜덤출력
+    todo.js = ToDo를 입력받고 저장해서 출력
 
-    ID = 
+    Class 
+    .login-form = login을 위한 Form이 있는 Class
+    .hidden = form을 숨기기 위한 Class
 
+    ID 
+    #greeting = 저장된 정보의 사용자에게 인사하기 위한 ID
+    #clock = 시간값을 받아오기 위한 ID
+    #quote = 명언값을 받아오기 위한 ID
+    #todo-form = ToDo를 담기위한 ID
+    #todo-list = ToDo-List 정렬을 위한 ID
 -->
