@@ -903,11 +903,12 @@ const loginInput = document.querySelector(".login-form :first-child");
 //querySelector 할 때에 클래스랑 :first-child 또는 :nth-child(1)을 사용할 때 사이에 띄어쓰기를 넣어줘야 된다.
 const greeting = document.querySelector("#greeting");
 
+//클래스 및 변수 단일화
 const HIDDEN_CLASS = "hidden";
 const USERNAME_KEY = "username";
 //const link = document.querySelector("a");
 
-function onLoginSubmit(event){
+function onLoginSubmit(event){ //로그인 submit 실행 함수
     // const username = loginInput.username;
     event.preventDefault();
     // console.log(loginInput.value);
@@ -929,13 +930,14 @@ function onLoginSubmit(event){
 // }
 
 //link.addEventListener("click", linkClick);
-function paintGreeting(username){
+function paintGreeting(username){ //저장된 이름 값 받아서 인사
     greeting.innerText =`반가워요 ${username} 님`;
     greeting.classList.remove(HIDDEN_CLASS);
 } //여기서 username은 argument에서 가져올 것 (username은 매개변수로 username안에 호출할 때 주는 값을 받는 것)
 
-const savedUsername = localStorage.getItem(USERNAME_KEY);
+const savedUsername = localStorage.getItem(USERNAME_KEY); //저장된 이름 받아서 변수에 저장
 
+//svaedUsername 값에 따른 조건문
 if(savedUsername === null){
     //show the form
     loginForm.classList.remove(HIDDEN_CLASS);

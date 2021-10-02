@@ -1,6 +1,6 @@
 const clock = document.querySelector("h2#clock");
 
-function getClock(){
+function getClock(){ //시간 분 초 값 받아오는 함수
     const date = new Date();
     const hours =  String(date.getHours()).padStart(2,"0");
     const minutes =  String(date.getMinutes()).padStart(2,"0");
@@ -10,7 +10,7 @@ function getClock(){
 }
 
 getClock();
-setInterval(getClock, 1000);
+setInterval(getClock, 1000); //1초마다 시간 분 초 함수 실행
 
 /*  5.0 Intervals
         interval은 '매번' 일어나야 하는 무언가를 말함

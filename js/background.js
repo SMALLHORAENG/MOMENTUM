@@ -8,11 +8,11 @@ const images = [
 ];
 
 
-const chosenImage = images[Math.floor(Math.random() * images.length)];
+const chosenImage = images[Math.floor(Math.random() * images.length)]; //랜덤주소
 
-const bgImage = document.createElement("img");
+const bgImage = document.createElement("img"); //이미지태그 생성
 
-bgImage.src = `${chosenImage}`;
+bgImage.src = `${chosenImage}`; //이미지주소 추가
 
 document.body.appendChild(bgImage);
 

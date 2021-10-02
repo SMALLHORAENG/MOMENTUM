@@ -46,14 +46,14 @@ const author = document.querySelector("#quote span:last-child");
 
 //const todayQuote = quotes[Math.floor(Math.random() * quotes.length)];
 
-function delay(){
+function delay(){ //명언 및 이름 랜덤출력
     const todayQuote = quotes[Math.floor(Math.random() * quotes.length)];
     quote.innerText = todayQuote.quote;
     author.innerText = todayQuote.author;
 }
 
 delay();
-setInterval(delay,900000);
+setInterval(delay,900000); //15분마다 랜덤명언 출력
 
 /*6.0 Quotes
  사용할 명언과 이름

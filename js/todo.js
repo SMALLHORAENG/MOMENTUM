@@ -2,35 +2,36 @@ const toDoForm = document.getElementById("todo-form");
 const toDoInput = document.querySelector("#todo-form input");
 const toDoList = document.getElementById("todo-list");
 
+const TODOS_KEY = "todos";
+
 const toDos = [];
 
-function saveToDos(){
-    localStorage.setItem("toDos", JSON.stringify(toDos))
+function saveToDos(){ //투두 값 저장
+    localStorage.setItem(TODOS_KEY, JSON.stringify(toDos));
 }
 
-function deleteToDo(event){
+function deleteToDo(event){ //투두 값 삭제
     //console.log(event.target.parentElement);
     const li = event.target.parentElement;
     li.remove();
 }
 
-function paintToDo(newTodo){
+function paintToDo(newTodo){ //투두 입력
     const li = document.createElement("li");
     const span = document.createElement("span");
     span.innerText = newTodo;
 
     const button = document.createElement("button");
     button.innerText = "X";
+    button.addEventListener("click",deleteToDo);
 
     li.appendChild(span);
     li.appendChild(button);
 
-    button.addEventListener("click",deleteToDo);
-
     toDoList.appendChild(li);
 }
 
-function handleTodoSubmit(event){
+function handleTodoSubmit(event){ //submit 이벤트
     event.preventDefault();
     const newTodo = toDoInput.value;
     toDoInput.value = "";
@@ -39,8 +40,16 @@ function handleTodoSubmit(event){
     saveToDos();
 }
 
-toDoForm.addEventListener("submit", handleTodoSubmit);
+toDoForm.addEventListener("submit", handleTodoSubmit); //이벤트 호출 실행
 
+const savedToDos = localStorage.getItem(TODOS_KEY);
+console.log(savedToDos);
+
+if(savedToDos !== null){
+    const parsedToDos = JSON.parse(savedToDos);
+    console.log(parsedToDos);
+    parsedToDos.forEach((item) => console.log("hello",item)); 
+}
 
 
 /* 7.0 Setup
@@ -110,7 +119,7 @@ toDoForm.addEventListener("submit", handleTodoSubmit);
     저장
         localStorage
         localSotrage에 저장한 뒤 새로고침해도 나오게 불러오기
-        1. 저장
+        저장
             const array명 = []; 로 array 생성
             todo를 입력할 때 array를 가져와서 입력한 todo를 push 해주기 (submit 함수안에)
             array명.push(argument - 입력받는 값 담기는것);
@@ -128,6 +137,43 @@ toDoForm.addEventListener("submit", handleTodoSubmit);
             array를 그냥 넣으면 중복이 안되지만 JSON.stringify를 이용시 중복이 가능하다.
 
     출력(호출1)
+     JSON.stringify
+        JSON.stringify(객체,js값);
+        위 코드 작성시 배열의 값을 단순한 string으로 바꿔준다
+        여기 다시 이해하고 적립하자 ^^
 
+     JSON.parse
+        JSON.parse("[1,2,3,4]") -> (4) [1,2,3,4] 이런식으로 사용가능한 배열로 만들어줌
+        (string을 js가 이해할 수 있는 배열로 만들어줌)
+        JSON.parse(localStorage.getItem("ToDos")) 하면 localStorage에 있는 ToDos키를 가진 값을 가져와줌 
+         *localStorage 안에 있는 값은 그냥 string값인데 이걸 JSON.parse에 넣어주면 배열값으로 바꿔줌*
+
+        todos 값을 여러곳에서 사용하니 오류가 발생하지 않도록 하나의 변수로 선언해준다
+        const TODOS_KEY = "todos"
+
+        localStorage.getItem("ToDos") 를 저장해줄 변수를 만들어준다
+
+        ToDos가 비어있으면 null값을 갖는데 이걸 이용해서 조건문을 만들어준다
+        !== null (null값을 가진 상태가 아니라면)
+        const parsedToDos = JSON.parse(savedToDos);
+        parsedToDos 라는 변수안에 savedToDos의 값을 배열로 만들어서 넣어준다
+        JSON.parse를 이용해서
+        
+        forEach()
+        forEach는 array에 있는 각각의 item에 대해 function을 실행할 수 있게 해줌 (array에 있는 기능)
+        괄호안에 들어가는 함수를 array의 item만큼 실행시켜줌
+
+        function에 값을 받아줄 argument가 필요함 (item을 받는것이니 여기서는 item이라고 사용)
+
+        function 없이도 짧은 코드를 만들 수 있다
+        방법은 forEach((argument명) => 실행코드)); 해주는 것
+        이 방법을 arrow function 화살표 함수라고 한다
+        parsedToDos.forEach((item) => console.log("hello",item));
+        이 화살표 함수는 item이라는 argument를 넘겨줘서 출력되게 해주는 것
+        (여기서의 item은 parsedToDos가 담고있는 배열값이다, 배열의 수(item)만큼 출력해준다) 
     
+    ㅁ 저장을 습관화 하자.. KEY 값은 todos라고 나와야 한다 const TODOS_KEY = "todos" 라고 해줬어도 그렇다 ㅁ
+    
+    7.5 부분
+        
 */                  
