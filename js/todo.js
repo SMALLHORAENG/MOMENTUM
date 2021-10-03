@@ -18,8 +18,9 @@ function deleteToDo(event){ //투두 값 삭제
 
 function paintToDo(newTodo){ //투두 입력
     const li = document.createElement("li");
+    li.id = newTodo.id;
     const span = document.createElement("span");
-    span.innerText = newTodo;
+    span.innerText = newTodo.text;
 
     const button = document.createElement("button");
     button.innerText = "X";
@@ -35,8 +36,14 @@ function handleTodoSubmit(event){ //submit 이벤트
     event.preventDefault();
     const newTodo = toDoInput.value;
     toDoInput.value = "";
-    toDos.push(newTodo);
-    paintToDo(newTodo);
+
+    const newTodosObj = {
+        text: newTodo,
+        id: Date.now(),
+    }
+
+    toDos.push(newTodosObj);
+    paintToDo(newTodosObj);
     saveToDos();
 }
 
@@ -190,7 +197,38 @@ if(savedToDos !== null){
             toDos = parsedToDos;
         여기서 또 문제 , 모두 삭제해도 localStorage에서 지워지지 않았기 때문에 동일하게 출력됨
 
-    7.6 삭제문제 해결
-        
+    7.6 삭제문제 해결 1
+        localStorage에서 지워줘야 함
+        localStorage는 데이터베이스가 아님 하지만 toDos array는 데이터베이스임
+        localStorage는 toDos array를 복사해두는 곳
 
+        toDos array 안에 있는 todo값들에게 ID같은 걸 주는방법으로 해야 삭제문제가 해결됨
+        (text 대신 object를 만들어주기)
+
+        id를 넣어줘서 어떤 li인지 구분할 수 있도록 해주는데
+        이 id를 랜덤으로 주는것이 필요함, Date.now() 해주면 밀리초 단위로 시간을 줌
+
+        const newTodosObj = {
+        text: newTodo,
+        id: Date.now(),
+        }
+
+        toDos.push(newTodosObj);
+        paintToDo(newTodosObj);
+
+        netTodosObj 라는 object를 담을 수 있는 변수를 만들어준 뒤 text에 입력받은 newTodo 값을 넣고
+        id에는 Date.now()를 통해 랜덤적으로 아이디를 넣어줄 수 있도록 한다
+        toDos.push(newTodosObj) 를 한 이유는 텍스트와 아이디 값 모두 push 해주기 위함 (localStorage)
+        paintToDo(newTodosObj) 를 한 이유는 텍스트와 아이디 값 모두 입력해 저장해주기 위함
+
+        li.id = newTodo.id;
+        위 코드를 통해서 리스트인 li에 id값을 넣어주게 됨
+
+        span.innerText = newTodo.text;
+        위 코드처럼 해주지 않으면 Object Object로 나오게 된다 text를 해줘야 잘 출력됨
+
+    7.7 삭제문제 해결 2
+        
+        
 */                  
+

@@ -12,7 +12,7 @@ const chosenImage = images[Math.floor(Math.random() * images.length)]; //랜덤�
 
 const bgImage = document.createElement("img"); //이미지태그 생성
 
-bgImage.src = `${chosenImage}`; //이미지주소 추가
+bgImage.src = `${chosenImage}`; //이미지주소 추가 
 
 document.body.appendChild(bgImage);
 
