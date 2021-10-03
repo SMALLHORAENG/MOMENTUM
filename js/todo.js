@@ -4,7 +4,7 @@ const toDoList = document.getElementById("todo-list");
 
 const TODOS_KEY = "todos";
 
-const toDos = [];
+let toDos = [];
 
 function saveToDos(){ //투두 값 저장
     localStorage.setItem(TODOS_KEY, JSON.stringify(toDos));
@@ -48,7 +48,9 @@ console.log(savedToDos);
 if(savedToDos !== null){
     const parsedToDos = JSON.parse(savedToDos);
     console.log(parsedToDos);
-    parsedToDos.forEach((item) => console.log("hello",item)); 
+    toDos = parsedToDos;
+    //parsedToDos.forEach((item) => console.log("hello",item)); 
+    parsedToDos.forEach(paintToDo);
 }
 
 
@@ -175,5 +177,20 @@ if(savedToDos !== null){
     ㅁ 저장을 습관화 하자.. KEY 값은 todos라고 나와야 한다 const TODOS_KEY = "todos" 라고 해줬어도 그렇다 ㅁ
     
     7.5 부분
+        parsedToDos.forEach((item) => console.log("hello",item)); 
+        이 부분은 각 item 앞에 hello를 붙이고 출력하는 방식인데
+        item 부분에 paintToDo함수를 넣어주면 화면에 출력해준다 (투두를 입력하고 출력해주는 함수이기 떄문)
+        parsedToDos.forEach(paintToDo); 이렇게
+         *문제점 : 새로 입력시 덮어쓰고 이전 것 사라짐*
+            원인 : 비어있는 array로 시작되고 그 위에 push 해주기 때문
+            해결 방법
+            array를 const가 아닌 let로 해서 변경이 가능케 한다
+            let toDos = [];
+            그 후에 이전 array의 값을 저장해준다
+            toDos = parsedToDos;
+        여기서 또 문제 , 모두 삭제해도 localStorage에서 지워지지 않았기 때문에 동일하게 출력됨
+
+    7.6 삭제문제 해결
         
+
 */                  
