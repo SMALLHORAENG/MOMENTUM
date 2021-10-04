@@ -10,9 +10,18 @@ function saveToDos(){ //투두 값 저장
     localStorage.setItem(TODOS_KEY, JSON.stringify(toDos));
 }
 
+function toDo(argument_todo,li){
+    return argument_todo.id !== parseInt(li.id);
+}
+
 function deleteToDo(event){ //투두 값 삭제
     //console.log(event.target.parentElement);
     const li = event.target.parentElement;
+    
+    toDos = toDos.filter(argument_todo => toDo(argument_todo,li));
+// toDos = toDos.filter(toDo => toDo.id !== parseInt(li.id));
+
+    saveToDos();
     li.remove();
 }
 
@@ -183,7 +192,7 @@ if(savedToDos !== null){
     
     ㅁ 저장을 습관화 하자.. KEY 값은 todos라고 나와야 한다 const TODOS_KEY = "todos" 라고 해줬어도 그렇다 ㅁ
     
-    7.5 부분
+    7.5 forEach (모든 아이템에 값을 넣어줌, 또는 함수실행)
         parsedToDos.forEach((item) => console.log("hello",item)); 
         이 부분은 각 item 앞에 hello를 붙이고 출력하는 방식인데
         item 부분에 paintToDo함수를 넣어주면 화면에 출력해준다 (투두를 입력하고 출력해주는 함수이기 떄문)
@@ -228,7 +237,45 @@ if(savedToDos !== null){
         위 코드처럼 해주지 않으면 Object Object로 나오게 된다 text를 해줘야 잘 출력됨
 
     7.7 삭제문제 해결 2
+        forEach는 각 item마다 값을 주는데 이 예제의 코드처럼해서 object를 넣어줄 수 있다.
+
+        filter 메서드는 주어진 함수의 테스트를 통과하는 모든 요소를 새로운 배열로 넣어줌
+        filter(함수명) 하면 그 함수의 값이 true가 나와야 새로운 배열에 넣을 수 있음
+        return 값이 true와 false로 나온다
+        (조건이 맞아야 배열에 들어간다, 조건 결과가 false가 나오면 나오지 않음)
+
+            예시
+            const todos = [{text:"lalala",id: 12314421}, {text:"lololo",id: 22355121}]
+            function todosFilter(todo){
+                return todo.id !== 12314421 //이 부분의 조건은 todo.text를 통해 텍스트값으로 해주는것도 가능
+            }
+            todos.filter(todosFilter)
+            하면 출력값은 {text:"lololo",id: 22355121} 이것만 나올 것 이다
+            filter 부분에 return 값에 todo.id 의 값이 12314421 이 아니면 true가 나오기 때문에 그렇다
+        filter은 true 값이 나오는 것 외에는 출력 안해줌
+
+    7.8 삭제문제 해결 3
+        todo를 삭제할 때 id값을 알 수 있으니 그거로 삭제해주면 됨
+        filter function이 새 array를 주는걸 기억해야함 (기존거에서 걸러서 새 array를 주는 것)
+
+        toDos = toDos.filter(toDo => toDo.id !== parseInt(li.id));
+        클릭한 li.id와 다른 toDo를 남겨두겠다는 걸 의미함
+
+        parseInt 해준 이유는 id의 값이 number 값 이지만 console.log(typeOf li.id) 해주면 string 나옴
+
+        함수 마지막에 saveToDos을 호출해준 이유는 지우고 저장하기 위해서임
+
+        toDos = toDos.filter(toDo => toDo.id !== parseInt(li.id));
+        이 코드의 괄호 부분은 function을 이용하면 아래 코드처럼 작성
+
+        function toDo(argument_todo,li){
+        return argument_todo.id !== parseInt(li.id);
+        }
+
+        toDos = toDos.filter(argument_todo => toDo(argument_todo,li));
         
-        
+        toDo function 에서 argument_todo와 li를 argument로 가져오는데
+        이건 필터 괄호에 작성해서 보내준다
+        첫번쨰 argument => 함수명(argument값 1, 2) 이렇게 하면 다수의 argument값을 보낼 수 있다.
 */                  
 
