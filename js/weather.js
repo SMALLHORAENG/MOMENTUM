@@ -74,6 +74,8 @@ const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lo
         위 작성된 코드에서 response.json() 은 response(응답)의 json을 가져오는걸 의미함
         json은 위 코드에서 url안에 담고있는 모든 정보를 의미함
 
+        (response는 여기서는 생성자가 아니라 객체이다 - 이름 바꿔도 됨 -)
+
         .then((data) => {
             const name = data.name;
             const weather = data.weather[0].main;
