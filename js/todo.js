@@ -184,10 +184,10 @@ if(savedToDos !== null){
         function에 값을 받아줄 argument가 필요함 (item을 받는것이니 여기서는 item이라고 사용)
 
         function 없이도 짧은 코드를 만들 수 있다
-        방법은 forEach((argument명) => 실행코드)); 해주는 것
+        방법은 forEach((argument명) => return해줄것)); 해주는 것
         이 방법을 arrow function 화살표 함수라고 한다
         parsedToDos.forEach((item) => console.log("hello",item));
-        이 화살표 함수는 item이라는 argument를 넘겨줘서 출력되게 해주는 것
+        이 화살표 함수는 item이라는 argument를 넘겨줘서 출력되게 해주는 것(return)
         (여기서의 item은 parsedToDos가 담고있는 배열값이다, 배열의 수(item)만큼 출력해준다) 
     
     ㅁ 저장을 습관화 하자.. KEY 값은 todos라고 나와야 한다 const TODOS_KEY = "todos" 라고 해줬어도 그렇다 ㅁ
