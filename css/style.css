@@ -18,3 +18,63 @@ h1 {
 .hidden{
     display: none;
 }
+
+#greeting{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15%;
+}
+
+#clock{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 50px;
+}
+
+#todo-form{
+    text-align: center;
+}
+#todo-form input{
+    text-align: center;
+    font-size: large;
+    border: ridge 5px;
+    border-radius: 5%;
+}
+
+input::placeholder{
+    color: black;
+}
+
+#todo-list{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+}
+
+img{
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+#quote{
+    display: flex;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: bold;   
+}
+
+#weather{
+    display: flex;
+    justify-content: flex-end;
+    font-size: large;
+    font-weight: bold;
+    color:firebrick;
+}

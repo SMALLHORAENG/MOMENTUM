@@ -1,4 +1,7 @@
-const API_KEY = "";
+//import "dotenv/config";
+// const API_KEY = process.env.REACT_APP_API_KEY;
+
+const API_KEY = "b28a96a5ac5ac3347b456a3cf26d80d2";
 
 function onGeoOk(position){
     const lat = position.coords.latitude;
@@ -10,8 +13,8 @@ function onGeoOk(position){
     .then((data) =>{
         const weather = document.querySelector("#weather span:last-child");
         const city = document.querySelector("#weather span:first-child");
-        city.innerText = `위치: ${data.name}/`;
-        weather.innerText =  `날씨: ${data.weather[0].main}/ 현재온도: ${data.main.temp}`;
+        city.innerText = `위치: ${data.name}`;
+        weather.innerText =  `/날씨: ${data.weather[0].main}/현재온도: ${data.main.temp}`;
     });
 }
 
