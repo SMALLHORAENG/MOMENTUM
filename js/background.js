@@ -1,7 +1,7 @@
 const images = [
-    "https://cdn.crowdpic.net/list-thumb/thumb_l_D8779A608E0BDF5D6D01D3691D0760F1.jpg"
+    "https://t1.daumcdn.net/cfile/tistory/2127125055CDA4B916"
 ,
-    "https://cdn.crowdpic.net/list-thumb/thumb_l_E8711087E7EE5624A58DCBB200ADA91B.jpg"
+    "https://lh3.googleusercontent.com/proxy/13zwlWeFWMUe5g86-IX5772qc0F_FEbPLgJ44VxWV56UZy2kV67nPdbX3VAs0PmIvuhdae8OfL_DN77iEY-BqEfGAzKbJFA0HYLQEkQbblnpEcSk-2XZW1BjAE3g03KXNkEoMN4migtDNOnbObDV5hqMN78SdRIEqA"
 ,
     "https://img.freepik.com/free-photo/blue-sky-with-cloud-in-sunshine-day_45004-123.jpg?size=626&ext=jpg"
 ,
@@ -9,13 +9,18 @@ const images = [
 ];
 
 
-const chosenImage = images[Math.floor(Math.random() * images.length)]; //랜덤주소
-
 const bgImage = document.createElement("img"); //이미지태그 생성
 
+function bgImg(){
+const chosenImage = images[Math.floor(Math.random() * images.length)]; //랜덤주소
 bgImage.src = `${chosenImage}`; //이미지주소 추가 
-
 document.body.appendChild(bgImage);
+}
+
+bgImg();
+setInterval(bgImg,900000); //15분마다 배경이미지 변경
+
+
 
 
 /*

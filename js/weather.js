@@ -22,9 +22,14 @@ function onGeoError(){
     alert("위치를 찾을 수 없습니다.");
 }
 
+function weather(){
 navigator.geolocation.getCurrentPosition(onGeoOk, onGeoError);
-
 //latitude 위도 //longitude 경도
+}
+
+weather();
+setInterval(weather,900000); //15분마다 위치주소 받아서 위치,날씨,온도체크
+
 
 /* 8.0 Geolocation
         user의 위치(Geolocation)을 준다
