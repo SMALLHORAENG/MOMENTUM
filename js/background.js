@@ -1,7 +1,7 @@
 const images = [
     "https://t1.daumcdn.net/cfile/tistory/2127125055CDA4B916"
 ,
-    "https://lh3.googleusercontent.com/proxy/13zwlWeFWMUe5g86-IX5772qc0F_FEbPLgJ44VxWV56UZy2kV67nPdbX3VAs0PmIvuhdae8OfL_DN77iEY-BqEfGAzKbJFA0HYLQEkQbblnpEcSk-2XZW1BjAE3g03KXNkEoMN4migtDNOnbObDV5hqMN78SdRIEqA"
+    "https://t1.daumcdn.net/cfile/blog/21410F4451F746A109"
 ,
     "https://img.freepik.com/free-photo/blue-sky-with-cloud-in-sunshine-day_45004-123.jpg?size=626&ext=jpg"
 ,
